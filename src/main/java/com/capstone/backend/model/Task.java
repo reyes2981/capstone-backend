@@ -1,9 +1,16 @@
 package com.capstone.backend.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name ="tasks")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "tasks")
 public class Task {
 
     @Id
@@ -16,6 +23,5 @@ public class Task {
 
     @Column
     private Boolean complete;
-
 
 }
