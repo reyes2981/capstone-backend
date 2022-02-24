@@ -1,4 +1,8 @@
 package com.capstone.backend.repository;
 
-public interface TaskRepository {
+import com.capstone.backend.model.Task;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TaskRepository extends JpaRepository<Task, Long> {
+
 }
