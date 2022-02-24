@@ -2,11 +2,13 @@ package com.capstone.backend.service;
 
 import com.capstone.backend.model.Task;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface TaskService   {
 
-    Task saveTask(Task task);
-    Task getTask(Long id);
-    List<Task> getTasks();
+    Task create(Task task);
+    Task get(Long id);
+    Task update(Task task);
+    Collection<Task> list(int limit);
 }
