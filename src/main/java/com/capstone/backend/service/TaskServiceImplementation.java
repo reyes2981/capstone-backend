@@ -5,6 +5,7 @@ import com.capstone.backend.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Example;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.querydsl.QPageRequest;
 import org.springframework.stereotype.Service;
 
@@ -48,6 +49,6 @@ public class TaskServiceImplementation implements TaskService {
     @Override
     public Collection<Task> list(int limit) {
         log.info("Fetching all tasks");
-        return taskRepository.findAll(QPageRequest.of(0, limit)).toList();
+        return taskRepository.findAll(PageRequest.of(0, limit)).toList();
     }
 }
