@@ -29,12 +29,20 @@ public class TaskServiceImplementation implements TaskService {
 
     @Override
     public Task get(Long id) {
-        return null;
+        log.info("Fetching task by id {}", id);
+        return taskRepository.findById(id).get();
     }
 
     @Override
     public Task update(Task task) {
-        return null;
+        log.info("updating a task {} in the DB", task.getId());
+        return taskRepository.save(task);
+    }
+
+    @Override
+    public Boolean delete(Long id) {
+        log.info("Deleting task by ID {}", id);
+        return Boolean.TRUE;
     }
 
     @Override
