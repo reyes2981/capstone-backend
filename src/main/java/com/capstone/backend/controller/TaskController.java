@@ -15,6 +15,7 @@ import java.util.Map;
 
 import static java.time.LocalDateTime.now;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/task")
 @RequiredArgsConstructor
