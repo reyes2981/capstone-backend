@@ -1,6 +1,6 @@
 package com.capstone.backend.service;
 
-import com.capstone.backend.exception.UserNotFoundException;
+import com.capstone.backend.exception.TaskNotFoundException;
 import com.capstone.backend.model.Task;
 import com.capstone.backend.model.User;
 import com.capstone.backend.repository.TaskRepository;
@@ -30,11 +30,11 @@ public class TaskService {
 
     public Task findTaskById(Long id) {
         return taskRepository.findTaskById(id)
-                .orElseThrow(() -> new UserNotFoundException("User by id" + id + " was not found"));
+                .orElseThrow(() -> new TaskNotFoundException("Task by id" + id + " was not found"));
     }
 
-    public void deleteUser(Long id) {
-        userRepository.deleteUserById(id);
+    public void deleteTask(Long id) {
+        taskRepository.deleteById(id);
     }
 
 
