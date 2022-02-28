@@ -20,7 +20,15 @@ public class User implements UserDetails {
 
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//Primary Key
+    @SequenceGenerator(
+            name = "user_sequence",
+            sequenceName = "user_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "user_sequence"
+    )//Primary Key
     private Long id;
 
     @Column
@@ -33,6 +41,7 @@ public class User implements UserDetails {
     private String password;
 
     @Column
+    @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
 
     public User(String username, String email, String password, AppUserRole appUserRole) {
