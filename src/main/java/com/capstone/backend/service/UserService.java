@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class UserService implements UserDetailsService {
 
-    private final static String USER_NOT_FOUND = "user with email %s not found";
+    private final static String USER_NOT_FOUND_MSG = "user with email %s not found";
     private final UserRepository userRepository;
 
     public User addUser(User user) {
@@ -46,6 +46,7 @@ public class UserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email)
             throws UsernameNotFoundException {
         return userRepository.findUserByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException())
+                .orElseThrow(() -> new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG, email)));
+
     }
 }
