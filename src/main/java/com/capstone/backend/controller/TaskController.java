@@ -24,7 +24,6 @@ public class TaskController {
         List<Task> tasks = taskService.findAllTasks();
         return new ResponseEntity<>(tasks, HttpStatus.OK);
     }
-
     @GetMapping("/find/{id}")
     public ResponseEntity<Task> getTaskById(@PathVariable("id") Long id) {
         Task task = taskService.findTaskById(id);
