@@ -24,4 +24,6 @@ public class Task {
     @Column
     private Boolean complete;
 
+    @Column
+    private Long numofpomos;
 }
