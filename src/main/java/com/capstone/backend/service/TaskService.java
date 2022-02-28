@@ -4,9 +4,11 @@ import com.capstone.backend.exception.TaskNotFoundException;
 import com.capstone.backend.model.Task;
 import com.capstone.backend.model.User;
 import com.capstone.backend.repository.TaskRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TaskService {
 
     private final TaskRepository taskRepository;

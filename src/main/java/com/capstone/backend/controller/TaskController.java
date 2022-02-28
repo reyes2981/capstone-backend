@@ -1,17 +1,13 @@
 package com.capstone.backend.controller;
 
-import com.capstone.backend.model.Response;
 import com.capstone.backend.model.Task;
-import com.capstone.backend.model.User;
 import com.capstone.backend.service.TaskService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 import static java.time.LocalDateTime.now;
 
@@ -36,7 +32,7 @@ public class TaskController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<User> addTask(@RequestBody Task task) {
+    public ResponseEntity<Task> addTask(@RequestBody Task task) {
         Task newTask = taskService.addTask(task);
         return new ResponseEntity<>(newTask, HttpStatus.CREATED);
     }
