@@ -3,11 +3,9 @@ package com.capstone.backend.controller;
 import com.capstone.backend.request.RegistrationRequest;
 import com.capstone.backend.service.RegistrationService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/registration")
 @AllArgsConstructor
