@@ -1,6 +1,6 @@
 package com.capstone.backend.controller;
 
-import com.capstone.backend.repository.model.User;
+import com.capstone.backend.model.User;
 import com.capstone.backend.repository.UserRepository;
 import com.capstone.backend.service.UserService;
 import lombok.RequiredArgsConstructor;

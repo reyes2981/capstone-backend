@@ -1,7 +1,7 @@
 package com.capstone.backend.service;
 
 import com.capstone.backend.exception.UserNotFoundException;
-import com.capstone.backend.repository.model.User;
+import com.capstone.backend.model.User;
 import com.capstone.backend.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

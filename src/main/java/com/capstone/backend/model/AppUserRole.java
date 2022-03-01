@@ -1,4 +1,4 @@
-package com.capstone.backend.repository.model;
+package com.capstone.backend.model;
 
 public enum AppUserRole {
     USER,

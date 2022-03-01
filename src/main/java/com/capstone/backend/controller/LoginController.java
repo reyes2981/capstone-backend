@@ -1,6 +1,6 @@
 package com.capstone.backend.controller;
 
-import com.capstone.backend.repository.model.User;
+import com.capstone.backend.model.User;
 import com.capstone.backend.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

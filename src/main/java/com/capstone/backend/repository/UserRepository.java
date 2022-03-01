@@ -1,6 +1,6 @@
 package com.capstone.backend.repository;
 
-import com.capstone.backend.repository.model.User;
+import com.capstone.backend.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
 package com.capstone.backend.service;
 
-import com.capstone.backend.repository.model.AppUserRole;
-import com.capstone.backend.repository.model.User;
+import com.capstone.backend.model.AppUserRole;
+import com.capstone.backend.model.User;
 import com.capstone.backend.request.RegistrationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
