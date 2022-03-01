@@ -1,6 +1,6 @@
 package com.capstone.backend.controller;
 
-import com.capstone.backend.model.Task;
+import com.capstone.backend.repository.model.Task;
 import com.capstone.backend.service.TaskService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

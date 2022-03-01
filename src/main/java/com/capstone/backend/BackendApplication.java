@@ -1,13 +1,7 @@
 package com.capstone.backend;
 
-import com.capstone.backend.model.Task;
-import com.capstone.backend.model.User;
-import com.capstone.backend.repository.TaskRepository;
-import com.capstone.backend.repository.UserRepository;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class BackendApplication {

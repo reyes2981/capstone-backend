@@ -1,4 +1,4 @@
-package com.capstone.backend.model;
+package com.capstone.backend.repository.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,6 +8,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -43,6 +44,9 @@ public class User implements UserDetails {
     @Column
     @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Collection<Task> tasks = new ArrayList<>();
 
     public User(String username, String email, String password, AppUserRole appUserRole) {
         this.username = username;

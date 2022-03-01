@@ -1,10 +1,9 @@
 package com.capstone.backend.service;
 
 import com.capstone.backend.exception.UserNotFoundException;
-import com.capstone.backend.model.User;
+import com.capstone.backend.repository.model.User;
 import com.capstone.backend.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -47,7 +46,7 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email)
             throws UsernameNotFoundException {
-        return userRepository.findUserByEmail(email)
+        return (UserDetails) userRepository.findUserByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG, email)));
 
     }
