@@ -1,4 +1,4 @@
-package com.capstone.backend.repository.model;
+package com.capstone.backend.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
