@@ -30,6 +30,8 @@ public class User {
     @Column
     private String password;
 
+    //role
+
     @ManyToMany(fetch = FetchType.EAGER)
     private Collection<Task> tasks = new ArrayList<>();
 
