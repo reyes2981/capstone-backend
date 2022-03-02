@@ -1,7 +1,11 @@
 package com.capstone.backend;
 
+import com.capstone.backend.model.User;
+import com.capstone.backend.repository.UserRepository;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class BackendApplication {
@@ -20,14 +24,14 @@ public class BackendApplication {
 //        };
 //    }
 
-//    @Bean
-//    CommandLineRunner run(UserRepository userRepository) {
-//        return args -> {
-//            userRepository.save(new User(null, "lori123", "lori1@yahoo.com", "123"));
-//            userRepository.save(new User(null, "bob87", "bob@yahoo.com", "123"));
-//            userRepository.save(new User(null, "jose999", "jose@yahoo.com", "123"));
-//            userRepository.save(new User(null, "margie23", "margie@yahoo.com", "123"));
-//        };
- //   }
+    @Bean
+    CommandLineRunner run(UserRepository userRepository) {
+        return args -> {
+            userRepository.save(new User("larry123", "larry@yahoo.com", "123", "USER"));
+            userRepository.save(new User("picard555", "pica@gmail.com", "123", "USER"));
+            userRepository.save(new User("hawker99", "hawk@aol.com", "123", "ADMIN"));
+            userRepository.save(new User("lucy88", "lucy23", "123", "ADMIN"));
+        };
+    }
 
 }

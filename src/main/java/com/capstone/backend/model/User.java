@@ -30,15 +30,19 @@ public class User {
     @Column
     private String password;
 
+    @Column
+    private String role;
+
     //role
 
     @ManyToMany(fetch = FetchType.EAGER)
     private Collection<Task> tasks = new ArrayList<>();
 
-    public User(String username, String email, String password) {
+    public User(String username, String email, String password, String role) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
 
