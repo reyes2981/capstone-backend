@@ -1,35 +1,23 @@
 package com.capstone.backend.service;
-
-
-import com.capstone.backend.model.User;
 import com.capstone.backend.repository.UserRepository;
 import lombok.AllArgsConstructor;
-
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.UUID;
 
 @Service
 @AllArgsConstructor
-public class UserService {
-
+public class UserService implements UserDetailsService {
+    private final static String USER_NOT_FOUND_MSG = "user with email %s not found";
     private final UserRepository userRepository;
 
-    public User addUser(User user) {
-        return userRepository.save(user);
+    @Override
+    public UserDetails loadUserByUsername(String email)
+            throws UsernameNotFoundException {
+        return userRepository.findByEmail(email)
+                .orElseThrow(() ->
+                        new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG, email)));
     }
-
-    public List<User> findAllUsers() {
-        return userRepository.findAll();
-    }
-
-    public User updateUser(User user) {
-        return userRepository.save(user);
-    }
-
-    public void deleteUser() {
-
-    }
-
 }

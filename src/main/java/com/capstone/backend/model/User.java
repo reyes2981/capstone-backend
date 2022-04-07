@@ -36,6 +36,7 @@ public class User implements UserDetails {
     private String password;
 
     @Column
+    @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
     @ManyToMany(fetch = FetchType.EAGER)
