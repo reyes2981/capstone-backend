@@ -34,14 +34,6 @@ public class BackendApplication {
 //        };
 //    }
 
-    @Bean
-    CommandLineRunner run(UserRepository userRepository) {
-        return args -> {
-            userRepository.save(new User("oscarthegrouch", "oscar@yahoo.com", "123", "USER"));
-            userRepository.save(new User("brucewayne6987", "wayne@gmail.com", "123", "ADMIN"));
-            userRepository.save(new User("jennirivera56", "jenni@aol.com", "123", "ADMIN"));
-            userRepository.save(new User("nancy88", "nancy88@gmail.com", "123", "USER"));
-        };
-    }
+
 
 }
